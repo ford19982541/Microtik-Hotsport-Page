@@ -6,10 +6,83 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>:: xXx Hospital ::</title>
+    <title>:: Free Hospital ::</title>
     <link href="dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="dist/css/bootstrap-theme.min.css" rel="stylesheet">
-    <link href="theme.css" rel="stylesheet">    
+    <link href="theme.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  margin: auto;
+  text-align: center;
+  font-family: arial;
+}
+
+.title {
+  color: grey;
+  font-size: 18px;
+}
+
+button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+
+a {
+  text-decoration: none;
+  font-size: 22px;
+  color: black;
+}
+
+button:hover, a:hover {
+  opacity: 0.7;
+}
+.overlay {
+  position: absolute;
+  bottom: 0;
+  left: 100%;
+  right: 0;
+  background-color: #008CBA;
+  overflow: hidden;
+  width: 0;
+  height: 100%;
+  transition: .5s ease;
+}
+.text {
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  white-space: nowrap;
+}
+.conta {
+  position: relative;
+  width: 100%;
+}
+
+.image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.conta:hover .overlay {
+  width: 100%;
+  left: 0;
+}
+</style>
   </head>
   <body>
   $(if chap-id)
@@ -19,7 +92,7 @@
 		<input type="hidden" name="dst" value="status.html" /><!-- value="$(link-orig)"  -->
 		<input type="hidden" name="popup" value="true" />
 	</form>
-	
+
 	<script type="text/javascript" src="/md5.js"></script>
 	<script type="text/javascript">
 	<!--
@@ -36,49 +109,54 @@ $(endif)
         <div class="navbar-header">
           <a class="navbar-brand" >IP : $(ip)</a>
         </div>
-        
+
       </div>
     </nav>
 
     <div class="container theme-showcase" role="main">
-
       <div>
-
-      	<div id="" align="center">
-               <div style="text-align: center;">
-     <center><img src="img/srisomdejlogo.png"></center>
-  
-      </div>
-
-		<form name="login" action="$(link-login-only)" method="post"
-			$(if chap-id) onSubmit="return doLogin()" $(endif)>
-			<input type="hidden" name="dst" value="$(link-orig)" /><!-- หน้าเว็บที่จะให้ตัดเข้า -->
-			<input type="hidden" name="popup" value="true" />
-        <input type="text"  class="form-control" style="width: 100%" name="username"  value="$(username)" placeholder="Username" required autofocus><br>
-        <input type="password" class="form-control" style="width: 100%" placeholder="Password" name="password" required>
-		 <td height="54" align="center"><br></td>
-        <button class="btn btn-lg btn-success btn-block" style="width: 100%" type="submit">ลงชื่อเข้าใช้&nbsp;<span class="glyphicon glyphicon-log-in"></span></button>
-		<br>
-		 <div align="center">$(if error)<br>
-
-
-
-                <div class="alert alert-danger" role="alert">
-  <strong>ขออภัยด้วย!  </strong>$(error)</div>$(endif)
-                <script type="text/javascript">
-				var error = "$(error)";
-				if (error == "no valid profile found"){ document.write("บัตรนี้หมดอายุใช้งานแล้วค่ะ ขอบคุณที่ใช้บริการ " );}
-				else if (error == "RADIUS server is not responding"){ document.write("ไม่มีชื่อผู้ใช้อยู่ในระบบ");}
-				</script>
-
-
-
-				</div>
-
-
-
-		</form>
-		</div>
+        <div class="card">
+          <div class="conta">
+              <img src="img/profile.jpg" alt="Ford" class="image" >
+                <div class="overlay">
+                  <div class="text">Hello World</div>
+                </div>
+          </div>
+              <h1>Ford'Zii</h1>
+              <p class="title">Software Engineering</p>
+              <p>University of phayao</p>
+              <div style="margin: 24px 0;">
+              <!--  <a href="#"><i class="fa fa-dribbble"></i></a>
+                <a href="#"><i class="fa f"></i></a>
+                <a href="#"><i class="fa fa-linkedin"></i></a> -->
+                <a href="https://www.facebook.com/ford.zii1"><i class="fa fa-facebook"></i></a>
+              </div>
+             <p><button>Info</button></p>
+          </div>
+      	<!--<div id="" align="center">
+            <div style="text-align: center;">
+                <center><img src="#"></center>
+            </div> -->
+          	<form name="login" action="$(link-login-only)" method="post"
+          			$(if chap-id) onSubmit="return doLogin()" $(endif)>
+          			<input type="hidden" name="dst" value="$(link-orig)" /><!-- หน้าเว็บที่จะให้ตัดเข้า -->
+          			<input type="hidden" name="popup" value="true" />
+                  <input type="text"  class="form-control" style="width: 100%" name="username"  value="$(username)" placeholder="Username" required autofocus><br>
+                  <input type="password" class="form-control" style="width: 100%" placeholder="Password" name="password" required>
+          		 <td height="54" align="center"><br></td>
+                  <button class="btn btn-lg btn-success btn-block" style="width: 100%" type="submit">ลงชื่อเข้าใช้&nbsp;<span class="glyphicon glyphicon-log-in"></span></button>
+          		<br>
+          		 <div align="center">$(if error)<br>
+                          <div class="alert alert-danger" role="alert">
+                            <strong>ขออภัยด้วย!  </strong>$(error)</div>$(endif)
+                          <script type="text/javascript">
+          				var error = "$(error)";
+          				if (error == "no valid profile found"){ document.write("บัตรนี้หมดอายุใช้งานแล้วค่ะ ขอบคุณที่ใช้บริการ " );}
+          				else if (error == "RADIUS server is not responding"){ document.write("ไม่มีชื่อผู้ใช้อยู่ในระบบ");}
+          				</script>
+          				</div>
+    		    </form>
+		     </div>
       <div class="footer">
       </div>
 
